@@ -4,23 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:background="@color/dark"
+    android:orientation="vertical"
+    android:paddingBottom="80dp">
 
     <TextView
         android:id="@+id/pageTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:text="German Cars"
+        android:text="Cars"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/bright_purple"
         android:textSize="30dp" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@android:color/black"
-        android:layout_marginHorizontal="16dp"/>
+        android:layout_marginHorizontal="16dp"
+        android:background="@color/bright_purple" />
 
 
     <androidx.recyclerview.widget.RecyclerView

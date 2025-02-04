@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_cars"
+        android:icon="@drawable/ic_car"
+        android:title="Cars" />
+    <item
+        android:id="@+id/nav_motorcycles"
+        android:icon="@drawable/ic_motorcycle"
+        android:title="Motorcycles" />
+</menu>

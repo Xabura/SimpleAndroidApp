@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class MyViewPagerAdapter(private val data: List<ListItem>) :
+class MyViewPagerAdapter(private val data: List<VehicleCategory>) :
     RecyclerView.Adapter<MyViewPagerAdapter.PageViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PageViewHolder {
@@ -17,12 +17,11 @@ class MyViewPagerAdapter(private val data: List<ListItem>) :
     }
 
     override fun onBindViewHolder(holder: PageViewHolder, position: Int) {
-        val listItem = data[position]
-        holder.pageTitle.text = listItem.title
+        val category = data[position]
+        holder.pageTitle.text = category.title
 
-        holder.recyclerView.layoutManager =
-            LinearLayoutManager(holder.recyclerView.context, RecyclerView.VERTICAL, false)
-        holder.recyclerView.adapter = MyRecyclerViewAdapter(listItem.items)
+        holder.recyclerView.layoutManager = LinearLayoutManager(holder.recyclerView.context)
+        holder.recyclerView.adapter = MyRecyclerViewAdapter(category.Vehicles)
     }
 
     override fun getItemCount(): Int = data.size

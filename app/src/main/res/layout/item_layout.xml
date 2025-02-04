@@ -1,26 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:background="@drawable/rounded_borders"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:clipToOutline="true">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:text="Sample Text"
         android:padding="8dp"
-        android:textAlignment="center"/>
+        android:text="Sample Text"
+        android:textAlignment="center"
+        android:textColor="@color/bright_purple"
+        android:textSize="20sp" />
 
-    <!-- ImageView for displaying image -->
-    <ImageView
-        android:id="@+id/imageView"
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/imageViewPager"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:src="@drawable/mercedes_c"
-        android:scaleType="centerCrop"/>
+        android:layout_height="170dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:ignore="MissingClass"
+        tools:listitem="@layout/image_item_layout" />
 
 </LinearLayout>

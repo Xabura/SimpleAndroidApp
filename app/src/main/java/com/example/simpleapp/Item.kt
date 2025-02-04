@@ -1,11 +1,11 @@
 package com.example.simpleapp
 
-data class Item(
+data class Vehicle(
     val name: String,
-    val imageResId: Int
+    val imageUrls: List<Int>
 )
 
-data class ListItem(
+data class VehicleCategory(
     val title: String,
-    val items: List<Item>
+    val Vehicles: List<Vehicle>
 )

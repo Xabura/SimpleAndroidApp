@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class MyRecyclerViewAdapter(private val items: List<Item>) :
+class MyRecyclerViewAdapter(private val items: List<Vehicle>) :
     RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -17,15 +17,16 @@ class MyRecyclerViewAdapter(private val items: List<Item>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = items[position]
-        holder.textView.text = item.name
-        holder.imageView.setImageResource(item.imageResId)
+        val vehicle = items[position]
+        holder.textView.text = vehicle.name
+
+        holder.imageViewPager.adapter = ImageAdapter(vehicle.imageUrls)
     }
 
     override fun getItemCount(): Int = items.size
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val textView: TextView = itemView.findViewById(R.id.textView)
-        val imageView: ImageView = itemView.findViewById(R.id.imageView)
+        val imageViewPager: RecyclerView = itemView.findViewById(R.id.imageViewPager)
     }
 }
